@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ejercicio02recextra.entities">
+  <ClassDiagramComponents>
+    <Class name="Cine" package="ejercicio02recextra.entities" visibility="public" xPosition="41.0" yPosition="11.0">
+      <Fields>
+        <Field name="pelicula" type="Pelicula" visibility="private"/>
+        <Field name="precio" type="int" visibility="private"/>
+        <Field name="listaEspectadores" type="ArrayList&lt;Espectador&gt;" visibility="private"/>
+        <Field name="asientos" type="boolean[][]" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Pelicula" name="pelicula"/>
+          <Argument type="int" name="precio"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getPelicula" returnType="Pelicula" visibility="public"/>
+        <Method name="setPelicula" returnType="void" visibility="public">
+          <Argument type="Pelicula" name="pelicula"/>
+        </Method>
+        <Method name="getPrecio" returnType="int" visibility="public"/>
+        <Method name="setPrecio" returnType="void" visibility="public">
+          <Argument type="int" name="precio"/>
+        </Method>
+        <Method name="getListaEspectadores" returnType="ArrayList&lt;Espectador&gt;" visibility="public"/>
+        <Method name="setListaEspectadores" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Espectador&gt;" name="listaEspectadores"/>
+        </Method>
+        <Method name="crearListaEspectadores" returnType="void" visibility="public"/>
+        <Method name="crearPelicula" returnType="void" visibility="public"/>
+        <Method name="llenarSala" returnType="void" visibility="public"/>
+        <Method name="mostrarSala" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Espectador" package="ejercicio02recextra.entities" visibility="public" xPosition="333.0" yPosition="558.0">
+      <Fields>
+        <Field name="nombre" type="Nombre" visibility="private"/>
+        <Field name="edad" type="int" visibility="private"/>
+        <Field name="dinero" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Nombre" name="nombre"/>
+          <Argument type="int" name="edad"/>
+          <Argument type="int" name="dinero"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="Nombre" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="Nombre" name="nombre"/>
+        </Method>
+        <Method name="getEdad" returnType="int" visibility="public"/>
+        <Method name="setEdad" returnType="void" visibility="public">
+          <Argument type="int" name="edad"/>
+        </Method>
+        <Method name="getDinero" returnType="int" visibility="public"/>
+        <Method name="setDinero" returnType="void" visibility="public">
+          <Argument type="int" name="dinero"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Pelicula" package="ejercicio02recextra.entities" visibility="public" xPosition="604.0" yPosition="81.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="duracion" type="int" visibility="private"/>
+        <Field name="edadMinima" type="int" visibility="private"/>
+        <Field name="director" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="int" name="duracion"/>
+          <Argument type="int" name="edadMinima"/>
+          <Argument type="String" name="director"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getDuracion" returnType="int" visibility="public"/>
+        <Method name="setDuracion" returnType="void" visibility="public">
+          <Argument type="int" name="duracion"/>
+        </Method>
+        <Method name="getEdadMinima" returnType="int" visibility="public"/>
+        <Method name="setEdadMinima" returnType="void" visibility="public">
+          <Argument type="int" name="edadMinima"/>
+        </Method>
+        <Method name="getDirector" returnType="String" visibility="public"/>
+        <Method name="setDirector" returnType="void" visibility="public">
+          <Argument type="String" name="director"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="listaEspectadores" source="ejercicio02recextra.entities.Cine" target="ejercicio02recextra.entities.Espectador" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Espectador&gt;"/>
+    <UseRelation source="ejercicio02recextra.entities.Cine" target="ejercicio02recextra.entities.Pelicula" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="pelicula" source="ejercicio02recextra.entities.Cine" target="ejercicio02recextra.entities.Pelicula" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ejercicio02recextra.entities.Cine" target="ejercicio02recextra.entities.Espectador" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
